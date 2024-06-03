@@ -1,0 +1,15 @@
+//Divide two numbers in C++
+#include<iostream>
+using namespace std;
+int main(){
+	float num1, num2, division;
+	std:: cout <<"enter first integer: ";
+	std:: cin >>num1;
+	
+	std:: cout <<"enter second integer: ";
+	std:: cin >>num2;
+	
+	float result = num1/num2;
+	std:: cout <<"result of the entered number = "<<result;
+	return 0;
+}
