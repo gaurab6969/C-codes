@@ -1,0 +1,18 @@
+//Swap two value in C++ using pointer
+#include<iostream>
+using namespace std;
+int main(){
+	int a, b, c;
+	int *p, *q;
+	std::cout<<"enter the value of a: ";
+	std::cin>>a;
+	std::cout<<"enter the value of b: ";
+	std::cin>>b;
+	p= &a, q= &b;
+	c= *p;
+	*p= *q;
+	*p= c;
+	std::cout<<"\n after Swapping a= "<<b;
+	std::cout<<"\n after Swapping b= "<<a;
+	return 0;
+}
