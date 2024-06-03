@@ -1,0 +1,15 @@
+// Add two number in C++
+#include<iostream>
+using namespace std;
+
+int main(){
+	int num1, num2;
+	std:: cout << "enter first integer: ";
+	std:: cin >> num1;
+	
+	std:: cout << "enter second integer: ";
+	std:: cin >> num2;
+	int result = num1 + num2;
+	std:: cout << "sum: "<<result<<std::endl;
+	return 0;
+}
