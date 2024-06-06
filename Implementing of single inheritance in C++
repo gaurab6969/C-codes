@@ -1,0 +1,19 @@
+//Implementing of single inheritance in C++
+#include<iostream>
+using namespace std;
+class A{
+	int x;
+	public:
+		A(){
+			x=5;
+		}
+		void sqr(){
+			cout<<"square= "<<x*x;
+		}
+};
+class B:
+	public A{};
+	int main(){
+		B b;
+		b.sqr();
+	}
