@@ -1,0 +1,17 @@
+//Overloading unary operators in C++
+#include<iostream>
+using namespace std;
+class OpOverloading{
+	int num;
+	public:
+		OpOverloading(){
+			num=23;
+		}
+		void operator++(int){
+			cout <<++num<<endl;
+		}
+};
+int main(){
+	OpOverloading O;
+	O++;
+}
