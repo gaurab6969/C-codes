@@ -1,0 +1,24 @@
+//Constructor overloading in C++
+#include<iostream>
+using namespace std;
+class A{
+	int a,b;
+	public:
+	A(){
+		a=10;
+		b=20;
+	}
+	A(int x, int y){
+		a=x;
+		b=y;
+	}
+	void add(){
+		cout<<"sum = "<<a+b<<endl;
+	}
+};
+int main(){
+	A O;
+	O.add();
+	A O1(100,300);
+	O1.add();
+}
