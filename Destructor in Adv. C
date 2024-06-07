@@ -1,0 +1,35 @@
+//Destructor in Adv. C
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct{
+	int *data;
+}
+Resource;
+Resource *CreateResource(){
+	Resource *res =malloc(sizeof(Resource));
+	if(res!= NULL){
+		res->data=malloc(sizeof(int));
+		*(res->data)=42;
+	}
+	return(res);
+}
+void destroyResource(Resource *res){
+	if(res!=NULL){
+		if(res->data!=NULL){
+			free (res->data);
+		}
+		free(res);
+	}
+}
+int main(){
+	Resource *myResource=CreateResource();
+	if(myResource!=NULL){
+		printf("Resource create.Data: %d\n",*(myResource->data));
+		destroyResource(myResource);
+		printf("Resource destroyed.\n");
+	}
+	else{
+		printf("Failed to create Resource object.Memory Allocation failed\n");
+	}
+	return 0;
+}
