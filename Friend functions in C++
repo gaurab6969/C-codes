@@ -1,0 +1,21 @@
+//Friend functions in C++
+#include<iostream>
+using namespace std;
+
+class rectangle {
+	float l,b;
+	public:
+		rectangle(){
+			l=20;
+			b=10;
+		}
+		friend void area (rectangle obj);
+	};
+	void area (rectangle obj){
+			cout<<"Area = "<<obj.l*obj.b<<endl;
+		}
+		int main(){
+			rectangle obj;
+			area (obj);
+		}
+
