@@ -1,0 +1,27 @@
+//Constructor in Adv. C
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct{
+	int x;
+	int y;
+}
+point;
+point *CreatePoint(int x, int y){
+	point *point = malloc(sizeof(point));
+	if(point!= NULL){
+		point->x=x;
+		point->y=y;
+	}
+	return (point);
+}
+int main(){
+	point *my_point=CreatePoint(3,4);
+	if(my_point!= NULL){
+		printf("Point Created:(%d,%d)\n",my_point->x,my_point->y);
+		free(my_point);
+		}
+		else{
+			printf("Failed to created point object.Memory Allocation failed\n");
+		}
+		return 0;
+	}
