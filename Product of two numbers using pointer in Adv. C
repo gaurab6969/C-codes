@@ -1,0 +1,12 @@
+//Find the product of two numbers using pointer in Adv. C
+#include<stdio.h>
+int main(){
+	int first, second, *p, *q, product;
+	printf("Enter two integers to multiply\n");
+	scanf("%d%d",&first,&second);
+	p=&first;
+	q=&second;
+	product=*p*(*q);
+	
+	printf("Product of entered number = %d\n",product);
+}
