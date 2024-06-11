@@ -1,0 +1,17 @@
+//Write a Program to Find the ASCII Value of a Character.
+
+#include <iostream>
+
+int main() {
+    char character;
+
+    // Get input from the user
+    std::cout << "Enter a character: ";
+    std::cin >> character;
+
+    // Find and print the ASCII value
+    int ascii_value = static_cast<int>(character);
+    std::cout << "The ASCII value of '" << character << "' is " << ascii_value << "." << std::endl;
+
+    return 0;
+}
