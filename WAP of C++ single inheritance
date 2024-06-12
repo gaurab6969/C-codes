@@ -1,0 +1,64 @@
+/*single inheritance: Create a class named Shape.
+Create child classes named Circle.*/
+
+#include <iostream>
+#include <cmath>
+
+// Base class
+class Shape {
+public:
+    // Virtual function to calculate the area
+    virtual double area() const {
+        return 0.0;
+    }
+
+    // Virtual function to calculate the perimeter
+    virtual double perimeter() const {
+        return 0.0;
+    }
+
+    // Virtual destructor
+    virtual ~Shape() {}
+};
+
+// Derived class
+class Circle : public Shape {
+private:
+    double radius;
+
+public:
+    // Constructor
+    Circle(double r) : radius(r) {}
+
+    // Override area function
+    double area() const{
+        return M_PI * radius * radius;
+    }
+
+    // Override perimeter function
+    double perimeter() const{
+        return 2 * M_PI * radius;
+    }
+
+    // Function to get the radius
+    double getRadius() const {
+        return radius;
+    }
+};
+
+int main() {
+    double radius;
+
+    // Get the radius from the user
+    std::cout << "Enter the radius of the circle: ";
+    std::cin >> radius;
+
+    // Create a Circle object
+    Circle circle(radius);
+
+    // Display the area and perimeter of the circle
+    std::cout << "Area of the circle: " << circle.area() << std::endl;
+    std::cout << "Perimeter of the circle: " << circle.perimeter() << std::endl;
+
+    return 0;
+}
