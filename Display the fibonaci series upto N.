@@ -1,0 +1,38 @@
+// Write a program in C++ to display the fibonaci series upto N.
+
+#include <iostream>
+
+// Function to display the Fibonacci series up to N
+void displayFibonacci(int N) {
+    int a = 0, b = 1, next;
+
+    std::cout << "Fibonacci series up to " << N << ": ";
+
+    if (N >= 1) {
+        std::cout << a << " ";
+    }
+    if (N >= 2) {
+        std::cout << b << " ";
+    }
+
+    for (int i = 3; i <= N; ++i) {
+        next = a + b;
+        std::cout << next << " ";
+        a = b;
+        b = next;
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    int N;
+
+    // Get input from the user
+    std::cout << "Enter the number of terms in the Fibonacci series: ";
+    std::cin >> N;
+
+    // Display the Fibonacci series up to N
+    displayFibonacci(N);
+
+    return 0;
+}
