@@ -1,0 +1,98 @@
+/*WAP to show Hierarchical inheritance: Create a class named
+Shape. Create child classes from it such as Circle.
+Rectangle, triangle, etc. Find Area of each shape*/
+
+#include <iostream>
+#include <cmath>
+
+// Base class
+class Shape {
+public:
+    // Virtual function to calculate the area
+    virtual double area() const = 0; // Pure virtual function
+
+    // Virtual destructor
+    virtual ~Shape() {}
+};
+
+// Derived class Circle
+class Circle : public Shape {
+private:
+    double radius;
+
+public:
+    // Constructor
+    Circle(double r) : radius(r) {}
+
+    // Override area function
+    double area() const override {
+        return M_PI * radius * radius;
+    }
+
+    // Function to get the radius
+    double getRadius() const {
+        return radius;
+    }
+};
+
+// Derived class Rectangle
+class Rectangle : public Shape {
+private:
+    double width, height;
+
+public:
+    // Constructor
+    Rectangle(double w, double h) : width(w), height(h) {}
+
+    // Override area function
+    double area() const override {
+        return width * height;
+    }
+
+    // Functions to get the dimensions
+    double getWidth() const {
+        return width;
+    }
+
+    double getHeight() const {
+        return height;
+    }
+};
+
+// Derived class Triangle
+class Triangle : public Shape {
+private:
+    double base, height;
+
+public:
+    // Constructor
+    Triangle(double b, double h) : base(b), height(h) {}
+
+    // Override area function
+    double area() const override {
+        return 0.5 * base * height;
+    }
+
+    // Functions to get the dimensions
+    double getBase() const {
+        return base;
+    }
+
+    double getHeight() const {
+        return height;
+    }
+};
+
+int main() {
+    // Creating objects for each shape
+    Circle circle(5.0);
+    Rectangle rectangle(4.0, 6.0);
+    Triangle triangle(4.0, 5.0);
+
+    // Display the area of each shape
+    std::cout << "Area of Circle with radius " << circle.getRadius() << " is " << circle.area() << std::endl;
+    std::cout << "Area of Rectangle with width " << rectangle.getWidth() << " and height " << rectangle.getHeight() << " is " << rectangle.area() << std::endl;
+    std::cout << "Area of Triangle with base " << triangle.getBase() << " and height " << triangle.getHeight() << " is " << triangle.area() << std::endl;
+
+    return 0;
+}
